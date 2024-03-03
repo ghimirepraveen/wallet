@@ -15,7 +15,7 @@ const userlogin = async (req, res) => {
 
     if (!getUser) throw "User doesnot exist";
     const matched = await bcrypt.compare(password, getUser.password);
-    if (!matched) throw "emailand password does not match";
+    if (!matched) throw "email and password does not match";
   } catch (e) {
     res.status(400).json({
       status: "failed",
